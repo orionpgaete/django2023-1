@@ -23,4 +23,6 @@ urlpatterns = [
     path('', views.index),
     path('lista', views.listaproyecto),
     path('agregar', views.agregarproyecto),
+    path('eliminar/<int:id>', views.eliminarProyecto),
+    path('modificar/<int:id>', views.modificaProyecto),
 ]
