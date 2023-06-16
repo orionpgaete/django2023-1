@@ -36,10 +36,10 @@ def eliminarProyecto(request, id):
 
 def modificaProyecto(request, id):
     proyecto = Proyecto.objects.get(id = id)
-    form = IngresoForm(instance=proyecto)
-    
+    form = FormProyecto(instance=proyecto)
+
     if request.method == 'POST':
-        form = IngresoForm(request.POST, instance=proyecto)
+        form = FormProyecto(request.POST, instance=proyecto)
         if form.is_valid():
             form.save()
         return index(request)
